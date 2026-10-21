@@ -6,7 +6,7 @@ from typing import Any, Callable
 
 from flask import current_app, g, jsonify, request
 
-from ..services.db import get_user_client
+from ..services.db import get_service_client, get_user_client
 from .verify import AuthenticationError, verify_supabase_jwt
 
 
@@ -14,10 +14,28 @@ def _error(status: int, code: str, message: str):
     return jsonify({"error": {"code": code, "message": message, "details": None}}), status
 
 
+def _set_dev_bypass_context() -> None:
+    """Populate the request context with a local super-admin and RLS-bypassing DB."""
+    g.user = {
+        "user_id": "dev-bypass",
+        "email": "dev@local",
+        "full_name": "Dev Bypass",
+        "role": "super_admin",
+        "department": None,
+    }
+    g.role = "super_admin"
+    g.db = get_service_client()
+    g.access_token = None
+
+
 def require_auth(view: Callable[..., Any]) -> Callable[..., Any]:
     """Authenticate the bearer token and require an active admin profile."""
     @wraps(view)
     def wrapped(*args: Any, **kwargs: Any):
+        if current_app.config.get("DEV_BYPASS_AUTH"):
+            _set_dev_bypass_context()
+            return view(*args, **kwargs)
+
         header = request.headers.get("Authorization", "")
         scheme, separator, token = header.partition(" ")
         if not separator or scheme.lower() != "bearer" or not token.strip():
@@ -41,7 +59,7 @@ def require_auth(view: Callable[..., Any]) -> Callable[..., Any]:
         except AuthenticationError:
             return _error(401, "unauthorized", "Invalid authentication credentials")
         except Exception:
-            current_app.logger.warning("Admin profile lookup failed")
+            current_app.logger.exception("Admin profile lookup failed")
             return _error(403, "forbidden", "An active administrator profile is required")
 
         g.user = {
@@ -64,10 +82,17 @@ def require_role(*roles: str) -> Callable[[Callable[..., Any]], Callable[..., An
     def decorator(view: Callable[..., Any]) -> Callable[..., Any]:
         @wraps(view)
         @require_auth
-        def wrapped(*args: Any, **kwargs: Any):
+        def authenticated_view(*args: Any, **kwargs: Any):
             if g.role not in roles:
                 return _error(403, "forbidden", "Insufficient permissions")
             return view(*args, **kwargs)
+
+        @wraps(view)
+        def wrapped(*args: Any, **kwargs: Any):
+            if current_app.config.get("DEV_BYPASS_AUTH"):
+                _set_dev_bypass_context()
+                return view(*args, **kwargs)
+            return authenticated_view(*args, **kwargs)
 
         return wrapped
 

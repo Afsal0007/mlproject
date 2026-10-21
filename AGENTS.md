@@ -9,7 +9,7 @@ CSV import/export), Placement Prediction (real scikit-learn model), Analytics & 
 ## Stack (do not substitute)
 - frontend/: React 18 + Vite + JavaScript (JSX) + Tailwind CSS v3.4 + React Router v6
   + @supabase/supabase-js v2 + axios + react-plotly.js with plotly.js-dist-min + react-hot-toast
-- backend/: Python 3.11, Flask 3, flask-cors, supabase (supabase-py v2), pydantic v2,
+- backend/: Python 3.11+ (tested on 3.13), Flask 3, flask-cors, supabase (supabase-py v2), pydantic v2,
   PyJWT[crypto], pandas, scikit-learn, joblib, python-dotenv, pytest
 - Database/Auth: Supabase Postgres + Supabase Auth (email/password)
 
@@ -33,6 +33,9 @@ CSV import/export), Placement Prediction (real scikit-learn model), Analytics & 
 - Frontend talks ONLY to Flask for data (via src/services/api.js). It uses supabase-js ONLY
   for sign-in/sign-out/session. The access token goes in `Authorization: Bearer <jwt>`.
 - Flask verifies the Supabase JWT on every /api route except GET /api/health.
+- Local development may opt into `DEV_BYPASS_AUTH=true` (frontend: `VITE_DEV_BYPASS_AUTH=true`);
+  it is off by default and bypasses authentication and RLS using the Supabase service-role key.
+  It must be off before Phase 5 write-role tests or Phase 12 RBAC checks are considered verified.
 - Flask uses a user-scoped Supabase client (the caller's JWT) for data access so RLS applies.
   The secret/service-role key is used ONLY for admin user management and is never sent to the browser.
 - Role check: the caller must have a row in public.admin_profiles; role-gated routes use a decorator.

@@ -199,7 +199,7 @@ def create_student():
     if isinstance(validated, ValidationError):
         return _error(400, "validation_error", "Request validation failed", validated.errors(include_context=False))
     data = validated.model_dump()
-    data["created_by"] = g.user["user_id"]
+    data["created_by"] = None if g.user["user_id"] == "dev-bypass" else g.user["user_id"]
     try:
         inserted = g.db.table("students").insert(data).execute().data or []
     except Exception as exc:

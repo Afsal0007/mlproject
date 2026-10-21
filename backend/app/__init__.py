@@ -27,6 +27,12 @@ def create_app(config_object: type = Config) -> Flask:
     app = Flask(__name__)
     app.config.from_object(config_object)
 
+    if app.config.get("DEV_BYPASS_AUTH"):
+        app.logger.warning("=" * 60)
+        app.logger.warning("!!! AUTH BYPASS ENABLED — LOCAL DEVELOPMENT ONLY !!!")
+        app.logger.warning("Authentication and RLS are bypassed; service-role access is active.")
+        app.logger.warning("=" * 60)
+
     # Load the trained pipeline once per application process. A missing
     # artifact is a valid startup state during initial setup.
     model = None

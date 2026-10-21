@@ -16,7 +16,7 @@ const api = axios.create({
 
 // Attach the latest Supabase JWT to every Flask request.
 api.interceptors.request.use(async (config) => {
-  if (supabase) {
+  if (import.meta.env.VITE_DEV_BYPASS_AUTH !== "true" && supabase) {
     const { data } = await supabase.auth.getSession();
     const token = data.session?.access_token;
     if (token) config.headers.Authorization = `Bearer ${token}`;
