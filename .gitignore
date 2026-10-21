@@ -1,0 +1,54 @@
+# Placement AI — .gitignore
+
+# ─── Python ───────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ─── ML Artifacts (large binaries — use DVC or similar) ───────
+backend/ml/models/*.pkl
+backend/ml/models/*.joblib
+backend/ml/models/*.bin
+
+# ─── Environment secrets ──────────────────────────────────────
+.env
+.env.local
+.env.*.local
+
+# ─── Node / Frontend ──────────────────────────────────────────
+node_modules/
+frontend/dist/
+frontend/.vite/
+
+# ─── Database ─────────────────────────────────────────────────
+*.db
+*.sqlite
+*.sqlite3
+
+# ─── IDE ──────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ─── OS ───────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ─── Logs ─────────────────────────────────────────────────────
+*.log
+logs/
+
+# ─── Coverage / Test artifacts ────────────────────────────────
+.coverage
+htmlcov/
+.pytest_cache/
