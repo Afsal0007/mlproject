@@ -4,8 +4,7 @@ Health blueprint — GET /api/health
 This endpoint is intentionally unauthenticated so load-balancers and
 monitoring tools can probe the backend without a JWT.
 """
-import os
-from flask import Blueprint, jsonify
+from flask import Blueprint, current_app, jsonify
 
 health_bp = Blueprint("health", __name__, url_prefix="/api")
 
@@ -13,20 +12,26 @@ health_bp = Blueprint("health", __name__, url_prefix="/api")
 @health_bp.get("/health")
 def health():
     """Return service liveness status."""
-    # Detect whether a model artifact exists in MODEL_DIR.
-    model_dir: str = os.getenv("MODEL_DIR", "ml/artifacts")
-    model_loaded: bool = any(
-        f.endswith((".pkl", ".joblib"))
-        for f in os.listdir(model_dir)
-        if os.path.isfile(os.path.join(model_dir, f))
-    ) if os.path.isdir(model_dir) else False
+    model = current_app.extensions.get("model")
+    db_status = "unknown"
+    if current_app.config.get("SUPABASE_URL") and current_app.config.get("SUPABASE_ANON_KEY"):
+        try:
+            from supabase import create_client
 
-    # DB status will be enriched in Phase 2 once Supabase client is wired.
+            client = create_client(
+                current_app.config["SUPABASE_URL"],
+                current_app.config["SUPABASE_ANON_KEY"],
+            )
+            client.table("app_settings").select("key").limit(1).execute()
+            db_status = "ok"
+        except Exception:
+            db_status = "unavailable"
     return jsonify(
         {
             "status": "ok",
             "version": "1.0.0",
-            "model_loaded": model_loaded,
-            "db": "unknown",
+            "model_loaded": model is not None,
+            "model_version": model.metadata.get("version") if model else None,
+            "db": db_status,
         }
     ), 200
