@@ -1,19 +1,136 @@
-"""
-ml/predict.py — Inference helper loaded at Flask startup (Phase 4 implementation).
+"""Inference wrapper for the saved, leakage-safe sklearn pipeline."""
+from __future__ import annotations
 
-LEAKAGE GUARD: placement_status, company, package_lpa are NEVER model features.
-The model is loaded ONCE at startup from ml/artifacts/ and reused for every request.
-"""
+import json
+from pathlib import Path
+from typing import Any
+
+import joblib
+import numpy as np
+import pandas as pd
+
+try:
+    from .preprocess import BOOL_FEATURES, RANGES
+except ImportError:  # pragma: no cover - direct script/module compatibility
+    from preprocess import BOOL_FEATURES, RANGES
+
+UI_RANGES: dict[str, tuple[float, float]] = {
+    **RANGES,
+    "batch_year": (2000, 2100),
+}
 
 
-class PlacementPredictor:
-    """Wraps the trained model artifact for inference."""
+class PlacementModel:
+    """Load and use a trained model; contributions are local explanations."""
 
-    def __init__(self, model_dir: str) -> None:
+    def __init__(self, model: Any, metadata: dict[str, Any], model_dir: Path) -> None:
         self.model_dir = model_dir
-        # Model loaded in Phase 4
-        self._model = None
+        self._model = model
+        self.metadata = metadata
+        self.features: list[str] = list(metadata["features"])
+        self.unused_by_model: list[str] = list(metadata["unused_by_model"])
+        self.threshold = float(metadata.get("threshold", 0.5))
+        self.training_medians: dict[str, Any] = metadata.get("training_medians", {})
 
-    def predict(self, student_profile: dict) -> dict:
-        """Return placement probability for a single student profile."""
-        raise NotImplementedError("Implement in Phase 4")
+    @classmethod
+    def load(cls, model_dir: str | Path) -> "PlacementModel":
+        path = Path(model_dir)
+        return cls(
+            joblib.load(path / "model.joblib"),
+            json.loads((path / "metadata.json").read_text(encoding="utf-8")),
+            path,
+        )
+
+    def _validated_row(self, profile: dict[str, Any]) -> pd.DataFrame:
+        if not isinstance(profile, dict):
+            raise ValueError("Input must be a student profile dictionary")
+        row: dict[str, Any] = {}
+        for field, value in profile.items():
+            if value is None:
+                continue
+            if field in BOOL_FEATURES:
+                if isinstance(value, str):
+                    normalized = value.strip().lower()
+                    if normalized in {"yes", "true", "1"}:
+                        value = True
+                    elif normalized in {"no", "false", "0"}:
+                        value = False
+                    else:
+                        raise ValueError(f"{field} must be a boolean or Yes/No")
+                elif not isinstance(value, (bool, np.bool_)):
+                    raise ValueError(f"{field} must be a boolean")
+                value = int(value)
+            elif field in UI_RANGES:
+                try:
+                    value = float(value)
+                except (TypeError, ValueError) as exc:
+                    raise ValueError(f"{field} must be numeric") from exc
+                low, high = UI_RANGES[field]
+                if not low <= value <= high:
+                    raise ValueError(f"{field} must be between {low:g} and {high:g}")
+            row[field] = value
+
+        model_row: dict[str, Any] = {}
+        for feature in self.features:
+            value = row.get(feature)
+            if value is None:
+                if feature not in self.training_medians:
+                    raise ValueError(f"Missing required model feature: {feature}")
+                value = self.training_medians[feature]
+            if feature in BOOL_FEATURES:
+                value = int(value)
+            model_row[feature] = value
+        return pd.DataFrame([model_row], columns=self.features)
+
+    def _contributions(self, row: pd.DataFrame, probability: float) -> list[dict[str, Any]]:
+        classifier = self._model.named_steps["classifier"]
+        preprocessor = self._model.named_steps["preprocessor"]
+        contributions: list[dict[str, Any]] = []
+        transformed = np.asarray(preprocessor.transform(row))[0]
+        transformed_names = [
+            name.split("__", 1)[-1] for name in preprocessor.get_feature_names_out()
+        ]
+        transformed_by_feature = dict(zip(transformed_names, transformed))
+
+        if hasattr(classifier, "coef_"):
+            coefficients = np.asarray(classifier.coef_)[0]
+            for feature, coefficient in zip(transformed_names, coefficients):
+                value = row.iloc[0][feature]
+                contributions.append(
+                    {"feature": feature, "value": value.item() if hasattr(value, "item") else value,
+                     "impact": float(coefficient * transformed_by_feature[feature])}
+                )
+        else:
+            for feature in self.features:
+                baseline = self.training_medians[feature]
+                perturbed = row.copy()
+                perturbed.loc[:, feature] = baseline
+                baseline_probability = float(self._model.predict_proba(perturbed)[0, 1])
+                value = row.iloc[0][feature]
+                contributions.append(
+                    {"feature": feature,
+                     "value": value.item() if hasattr(value, "item") else value,
+                     "impact": float(probability - baseline_probability)}
+                )
+        return sorted(contributions, key=lambda contribution: abs(contribution["impact"]), reverse=True)
+
+    def predict_one(self, profile: dict[str, Any]) -> dict[str, Any]:
+        """Predict one profile and return probability, label, and local impacts."""
+        row = self._validated_row(profile)
+        probability = float(self._model.predict_proba(row)[0, 1])
+        return {
+            "probability": probability,
+            "label": "placed" if probability >= self.threshold else "not_placed",
+            "contributions": self._contributions(row, probability),
+            "unused_by_model": list(self.unused_by_model),
+        }
+
+    def predict_batch(self, profiles: pd.DataFrame) -> list[dict[str, Any]]:
+        """Predict DataFrame rows in order, including local contributions."""
+        if not isinstance(profiles, pd.DataFrame):
+            raise ValueError("predict_batch expects a pandas DataFrame")
+        return [self.predict_one(profile) for profile in profiles.to_dict(orient="records")]
+
+
+# Backward-compatible name for early backend code; new callers use PlacementModel.
+PlacementPredictor = PlacementModel

@@ -29,9 +29,18 @@ def test_health_content_type(client):
     assert response.content_type == "application/json"
 
 
-def test_health_model_not_loaded_initially(client):
-    """No .pkl/.joblib files in artifacts yet — model_loaded must be False."""
+def test_health_model_not_loaded_when_artifact_is_missing(client, monkeypatch, tmp_path):
+    """Health reports no model when the configured artifact directory is empty."""
+    monkeypatch.setenv("MODEL_DIR", str(tmp_path))
     response = client.get("/api/health")
     data = json.loads(response.data)
-    # Phase 1: no model trained yet
     assert data["model_loaded"] is False
+
+
+def test_health_model_loaded_when_artifact_exists(client, monkeypatch, tmp_path):
+    """Health detects the model artifact created by the Phase 3 training CLI."""
+    (tmp_path / "model.joblib").write_bytes(b"test artifact")
+    monkeypatch.setenv("MODEL_DIR", str(tmp_path))
+    response = client.get("/api/health")
+    data = json.loads(response.data)
+    assert data["model_loaded"] is True
