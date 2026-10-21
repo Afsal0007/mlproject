@@ -8,8 +8,14 @@
 import axios from "axios";
 import { supabase } from "../lib/supabase.js";
 
+const configuredApiBase = import.meta.env.VITE_API_BASE_URL || "/api";
+const localDevHost = ["localhost", "127.0.0.1", "::1"].includes(window.location.hostname);
+const apiBaseUrl = import.meta.env.DEV && localDevHost
+  ? "/api"
+  : configuredApiBase;
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || "/api",
+  baseURL: apiBaseUrl,
   headers: { "Content-Type": "application/json" },
   withCredentials: false,
 });
