@@ -1,12 +1,21 @@
-// Placement AI — React App Entry Point (Phase 5 stub)
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+/**
+ * PlacementAI — React App Entry Point
+ * Mounts the router and global providers.
+ */
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+import AppRoutes from "./routes/AppRoutes.jsx";
+import "./index.css";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <div style={{ fontFamily: 'sans-serif', textAlign: 'center', marginTop: '4rem' }}>
-      <h1>🎓 Placement AI</h1>
-      <p>Phase 0 scaffold — full UI coming in Phase 5.</p>
-    </div>
-  </React.StrictMode>,
-)
+    <BrowserRouter>
+      <AppRoutes />
+      {/* Toast notifications — positioned top-right matching Stitch */}
+      <Toaster position="top-right" toastOptions={{ duration: 3000 }} />
+    </BrowserRouter>
+  </React.StrictMode>
+);

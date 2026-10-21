@@ -1,33 +1,28 @@
-# Placement AI — Backend Requirements
-# Pin versions for reproducibility; update intentionally.
+# PlacementAI — Backend Requirements
+# Stack as defined in AGENTS.md — do NOT substitute packages.
+# Pin minor versions; update intentionally and test before committing.
 
-# Web framework
-fastapi==0.111.0
-uvicorn[standard]==0.29.0
+# ── Web framework ──────────────────────────────────────────────
+flask==3.0.3
+flask-cors==4.0.1
 
-# Database
-sqlalchemy==2.0.30
-alembic==1.13.1
-asyncpg==0.29.0          # PostgreSQL async driver
-aiosqlite==0.20.0        # SQLite async driver (dev)
+# ── Supabase client ────────────────────────────────────────────
+supabase==2.4.6          # supabase-py v2
 
-# Auth & Security
-python-jose[cryptography]==3.3.0
-passlib[bcrypt]==1.7.4
-python-multipart==0.0.9
+# ── Auth ───────────────────────────────────────────────────────
+PyJWT[crypto]==2.8.0
 
-# Configuration
+# ── Validation ─────────────────────────────────────────────────
 pydantic==2.7.1
-pydantic-settings==2.2.1
+
+# ── Configuration ──────────────────────────────────────────────
 python-dotenv==1.0.1
 
-# ML
-scikit-learn==1.4.2
-xgboost==2.0.3
-pandas==2.2.2
-numpy==1.26.4
+# ── Data / ML ──────────────────────────────────────────────────
+pandas==2.2.3
+scikit-learn==1.5.1
 joblib==1.4.2
 
-# Utilities
-httpx==0.27.0            # async HTTP client (for testing)
-email-validator==2.1.1
+# ── Testing ────────────────────────────────────────────────────
+pytest==8.2.2
+pytest-flask==1.3.0

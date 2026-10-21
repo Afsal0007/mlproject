@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-secondary-fixed":"#100069","tertiary-fixed-dim":"#7bd0ff","surface-tint":"#5b598c","background":"#f8f9ff","on-surface":"#0b1c30","tertiary":"#000d16","on-primary-fixed-variant":"#444173","on-primary-fixed":"#181445","on-tertiary-container":"#0093c6","surface-container-high":"#dce9ff","primary-container":"#1e1b4b","primary":"#070235","on-background":"#0b1c30","secondary-container":"#6860ef","secondary-fixed-dim":"#c3c0ff","on-primary":"#ffffff","secondary":"#4e45d5","on-tertiary-fixed-variant":"#004c69","on-tertiary":"#ffffff","on-tertiary-fixed":"#001e2c","on-surface-variant":"#47464f","on-error":"#ffffff","inverse-primary":"#c4c1fb","primary-fixed":"#e3dfff","error-container":"#ffdad6","surface":"#f8f9ff","on-secondary-container":"#fffbff","outline":"#787680","surface-container-low":"#eff4ff","surface-container":"#e5eeff","on-secondary":"#ffffff","outline-variant":"#c8c5d0","surface-dim":"#cbdbf5","inverse-surface":"#213145","surface-bright":"#f8f9ff","on-secondary-fixed-variant":"#372abf","surface-container-highest":"#d3e4fe","surface-variant":"#d3e4fe","error":"#ba1a1a","tertiary-container":"#002535","primary-fixed-dim":"#c4c1fb","on-primary-container":"#8683ba","inverse-on-surface":"#eaf1ff","on-error-container":"#93000a","surface-container-lowest":"#ffffff","secondary-fixed":"#e3dfff","tertiary-fixed":"#c4e7ff"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"gutter":"1.5rem","gutter-mobile":"0.75rem","margin":"2rem","space-xl":"2.5rem","margin-mobile":"1rem","space-lg":"1.5rem","space-sm":"0.5rem","space-xs":"0.25rem","space-md":"1rem"},"fontFamily":{"label-md":["JetBrains Mono"],"body-sm":["Hanken Grotesk"],"body-md":["Hanken Grotesk"],"headline-lg":["Hanken Grotesk"],"headline-md":["Hanken Grotesk"],"headline-sm":["Hanken Grotesk"],"label-lg":["JetBrains Mono"],"headline-xl-mobile":["Hanken Grotesk"],"label-sm":["JetBrains Mono"],"headline-xl":["Hanken Grotesk"],"body-lg":["Hanken Grotesk"]},"fontSize":{"label-md":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0.02em","fontWeight":"500"}],"body-sm":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0","fontWeight":"400"}],"body-md":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"0","fontWeight":"400"}],"headline-lg":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-md":["1.25rem",{"lineHeight":"1.75rem","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-sm":["1rem",{"lineHeight":"1.5rem","letterSpacing":"-0.01em","fontWeight":"600"}],"label-lg":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"0.01em","fontWeight":"500"}],"headline-xl-mobile":["1.75rem",{"lineHeight":"2.25rem","letterSpacing":"-0.02em","fontWeight":"700"}],"label-sm":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.03em","fontWeight":"500"}],"headline-xl":["2.25rem",{"lineHeight":"2.75rem","letterSpacing":"-0.025em","fontWeight":"700"}],"body-lg":["1rem",{"lineHeight":"1.5rem","letterSpacing":"0","fontWeight":"400"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="flex items-center gap-space-sm px-space-md py-space-lg"><img alt="PlacementAI Brand Mark" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtQiTXa8x_b15i_wC2AaPxPxJqjQcX-Oi5bs5woLnM-HWdnqlnurXYMD9A9ebYIpuDm6vZM-gChLqLazpM9xlpEr34KjnjkjFadcI8WpSbYSutbJSmMWBqxgB1OdWIpjCJlPLttVv-Ch8pXtAz-WP_mgqiqAC3N33lpslgc7OdljBqAAPLhWC6_1LDwNYU83yjqbHmKIWADuDlMWyMN-gaoJ4VMiVvjdcLi5slOBB4LMATTpK2G3bJCQ"/><div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm text-primary tracking-tight truncate">PlacementAI</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">BTech CSE Academic Portal</span></div></div><div class="px-space-md pt-space-xs"><span class="px-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Platform Navigation</span></div><nav class="flex flex-col gap-space-xs px-space-md pt-space-sm" data-active-classes="bg-primary-container text-on-primary font-headline-sm"><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="placement-dashboard" href="#"><span class="font-body-md text-body-md">Placement Dashboard</span></a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="student-management" href="#"><span class="font-body-md text-body-md">Student Management</span></a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="placement-prediction" href="#"><span class="font-body-md text-body-md">Placement Prediction</span></a><a class="flex items-center px-space-md py-space-sm rounded-lg bg-primary-container text-on-primary font-headline-sm hover:bg-primary-container hover:text-on-primary transition-colors" data-path="analytics-reports" href="#"><span class="font-body-md text-body-md">Analytics &amp; Reports</span></a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="skill-gap-analysis" href="#"><span class="font-body-md text-body-md">Skill Gap Analysis</span></a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="admin-settings" href="#"><span class="font-body-md text-body-md">Admin &amp; Settings</span></a></nav></div><div class="flex flex-col gap-space-sm p-space-md bg-surface-container/50"><div class="flex items-center justify-between p-space-sm bg-surface-container-lowest rounded-lg shadow-[0_1px_3px_rgba(15,23,42,0.04)]"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface-variant">Flask REST API: <span class="text-secondary font-medium">Connected (v1.4.2)</span></span></div><span class="material-symbols-outlined text-[16px] text-outline">verified</span></div><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg bg-surface-container-lowest hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" data-path="login" href="#"><span class="font-body-sm text-body-sm">Sign Out</span><span class="font-label-sm text-label-sm text-outline">End Session</span></a></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md min-w-0"><div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant whitespace-nowrap"><span class="hover:text-on-surface transition-colors">Academic</span><span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span><span class="hover:text-on-surface transition-colors">CSE Placement Operations</span><span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span><span class="font-headline-sm text-headline-sm text-primary tracking-tight">Analytics &amp; Reports</span></div><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-space-sm text-[18px] text-outline pointer-events-none">search</span><input class="w-72 h-9 pl-8 pr-space-md bg-surface-container-lowest text-on-surface placeholder:text-outline text-body-sm rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary/20 transition-all font-body-sm" placeholder="Search Student ID, USN, or Name..." type="text"/></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container text-on-surface font-label-md text-label-md"><span class="material-symbols-outlined text-[14px] text-secondary">calendar_today</span><span>Batch 2024–2025</span></div><button class="relative p-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-lg transition-colors" title="Notifications"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-sm pl-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2m7fyGhEH3VduN46brGgds4aDIsR1fd5siPAq19t8s834etJjhUDVJvAKnYJ_tIxxgfu4TNLUS_VsNxgPir2J6FlFlKTZ-fAP6vrmBo2JifJLDDnA2f6yNaFr2fzl8VNVzXnd-tS9qCsgkAAznVCAWB448M6ViDlaLVtv9zMFXj8cV089pQYJTQiB44W6sjGhdf1kD3JfsrXsDVsrYnwFWlulmGzPG5lsiiAqiivVYiwaAJP__siA7g"/><div class="hidden xl:flex flex-col text-left"><span class="font-headline-sm text-headline-sm text-on-surface leading-tight">Dr. Sarah Jenkins</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Head of Placement &amp; Training</span></div><span class="material-symbols-outlined text-[18px] text-outline">arrow_drop_down</span></div></div></header><main class="relative pt-16 w-full px-space-lg py-space-lg bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- SECTION 1: HEADER & ACTIONS -->
+<section class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md mb-space-lg">
+<div class="flex flex-col gap-space-xs max-w-3xl">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim animate-pulse"></span>
+          Cohort Analytics &amp; Institutional Reporting / Batch 2024–2025
+        </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px] text-secondary">verified</span>
+          Verified for NBA Tier-1 Cycle
+        </span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary tracking-tight mt-1">
+        Placement Analytics, Department Benchmarks &amp; Reports
+      </h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+        Deep statistical analysis of placement conversions, department-wise velocity, CGPA correlation bands, compensation tiers, and exportable accreditation compliance summaries.
+      </p>
+</div>
+<!-- Right Action Cluster -->
+<div class="flex flex-wrap items-center gap-space-sm self-start lg:self-auto">
+<button class="flex items-center gap-space-xs px-3.5 h-9 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container-high transition-colors text-body-sm font-headline-sm shadow-sm" onclick="document.getElementById('refreshNotice').classList.toggle('hidden')" title="Last background ingest: 4m ago">
+<span class="material-symbols-outlined text-[16px] text-secondary">sync</span>
+<span>Synced 4m ago</span>
+</button>
+<div class="relative inline-block text-left group">
+<button class="flex items-center gap-space-xs px-3.5 h-9 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container shadow-sm transition-all text-body-sm font-headline-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">approval_delegation</span>
+<span>Accreditation Ready</span>
+<span class="material-symbols-outlined text-[14px] text-outline">expand_more</span>
+</button>
+<!-- Dropdown menu -->
+<div class="hidden group-hover:block absolute right-0 mt-1 w-64 bg-surface-container-lowest rounded-xl shadow-xl z-50 p-space-xs">
+<a class="flex flex-col p-space-sm rounded-lg hover:bg-surface-container-low transition-colors" href="#">
+<span class="font-headline-sm text-body-sm text-primary">NBA Criterion 5 (Placement)</span>
+<span class="font-body-sm text-label-sm text-on-surface-variant">Automated Table 5.2.1 format (PDF/XLS)</span>
+</a>
+<a class="flex flex-col p-space-sm rounded-lg hover:bg-surface-container-low transition-colors" href="#">
+<span class="font-headline-sm text-body-sm text-primary">NAAC SSR Metric 5.2.1</span>
+<span class="font-body-sm text-label-sm text-on-surface-variant">HEI Consolidated Verification Dossier</span>
+</a>
+<a class="flex flex-col p-space-sm rounded-lg hover:bg-surface-container-low transition-colors" href="#">
+<span class="font-headline-sm text-body-sm text-primary">NIRF Data Capturing Format</span>
+<span class="font-body-sm text-label-sm text-on-surface-variant">Higher Education Median CTC Schedule</span>
+</a>
+</div>
+</div>
+<!-- Export Dropdown Button -->
+<div class="relative inline-block text-left group">
+<button class="flex items-center gap-space-xs px-4 h-9 rounded-lg bg-primary text-on-primary hover:bg-primary-container shadow-sm transition-all text-body-sm font-headline-sm">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Export Complete Report</span>
+<span class="material-symbols-outlined text-[14px] text-on-primary-container">arrow_drop_down</span>
+</button>
+<div class="hidden group-hover:block absolute right-0 mt-1 w-52 bg-surface-container-lowest rounded-xl shadow-xl z-50 p-space-xs">
+<a class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-surface-container-low text-on-surface font-body-sm" href="#" onclick="alert('Generating Comprehensive CSV Ledger...');">
+<span class="material-symbols-outlined text-[16px] text-secondary">table_view</span>
+            Raw Cohort Data (.CSV)
+          </a>
+<a class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-surface-container-low text-on-surface font-body-sm" href="#" onclick="alert('Exporting Institutional Master Sheet (.XLSX)...');">
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container">grid_on</span>
+            Master Institutional Sheet (.XLSX)
+          </a>
+<a class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-surface-container-low text-on-surface font-body-sm" href="#" onclick="alert('Compiling Executive PDF Summary Brief...');">
+<span class="material-symbols-outlined text-[16px] text-error">picture_as_pdf</span>
+            Executive Briefing Dossier (.PDF)
+          </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Sync Notice Banner (Toggled on sync click) -->
+<div class="hidden mb-space-md p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between text-body-sm text-on-surface" id="refreshNotice">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+<span>Live campus drive connector status: Ingestion queue idle. 14 new candidate updates processed from TCS &amp; Cisco interviews.</span>
+</div>
+<button class="text-outline hover:text-on-surface" onclick="document.getElementById('refreshNotice').classList.add('hidden')">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<!-- SECTION 2: COHORT FILTER BAR -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm mb-space-lg flex flex-col gap-space-sm">
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">tune</span>
+<span class="font-headline-sm text-headline-sm text-primary">Cohort Slicing &amp; Analytics Filters</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container text-on-surface font-label-md text-label-md">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Scope: <strong>480</strong> Enrolled Students (<strong>420</strong> Opted for Campus Drives)</span>
+</div>
+</div>
+<!-- Filters Row -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-sm pt-space-xs">
+<!-- Dept Selector -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase text-outline">Engineering Department</label>
+<div class="relative">
+<select class="w-full h-9 pl-3 pr-8 bg-surface-container-low rounded-lg text-body-sm text-on-surface appearance-none focus:outline-none focus:bg-surface-container-lowest shadow-sm font-body-sm">
+<option>All Departments (CSE, ISE, AI&amp;DS, ECE)</option>
+<option>Computer Science &amp; Engg (CSE)</option>
+<option>Artificial Intelligence &amp; Data Science (AI&amp;DS)</option>
+<option>Information Science &amp; Tech (IT/ISE)</option>
+<option>Electronics &amp; Communication (ECE)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2 pointer-events-none text-[18px] text-outline">expand_more</span>
+</div>
+</div>
+<!-- Batch Selector -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase text-outline">Academic Graduating Cohort</label>
+<div class="relative">
+<select class="w-full h-9 pl-3 pr-8 bg-surface-container-low rounded-lg text-body-sm text-on-surface appearance-none focus:outline-none focus:bg-surface-container-lowest shadow-sm font-body-sm">
+<option>Batch 2024–2025 (Current Final Year)</option>
+<option>Batch 2023–2024 (Historical Benchmark)</option>
+<option>Batch 2022–2023 (Historical Benchmark)</option>
+<option>Batch 2025–2026 (Pre-final Pipeline)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2 pointer-events-none text-[18px] text-outline">calendar_month</span>
+</div>
+</div>
+<!-- Placement Status -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase text-outline">Outcome Status</label>
+<div class="relative">
+<select class="w-full h-9 pl-3 pr-8 bg-surface-container-low rounded-lg text-body-sm text-on-surface appearance-none focus:outline-none focus:bg-surface-container-lowest shadow-sm font-body-sm">
+<option>All Outcomes (Placed, In-Pipeline, Unplaced)</option>
+<option>Placed (Confirmed Offer Letters)</option>
+<option>In Technical Evaluation / Round 2</option>
+<option>High Priority Remediation (&lt; 6.5 CGPA)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2 pointer-events-none text-[18px] text-outline">filter_alt</span>
+</div>
+</div>
+<!-- CGPA Tier Quick Select -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase text-outline">Academic Cutoff (CGPA)</label>
+<div class="relative">
+<select class="w-full h-9 pl-3 pr-8 bg-surface-container-low rounded-lg text-body-sm text-on-surface appearance-none focus:outline-none focus:bg-surface-container-lowest shadow-sm font-body-sm">
+<option>All CGPA Tiers (&gt;8.5, 7.5–8.5, 6.5–7.5, &lt;6.5)</option>
+<option>Tier 1: Above 8.5 CGPA (Dean's Honors)</option>
+<option>Tier 2: 7.5 – 8.5 CGPA (First Class Dist.)</option>
+<option>Tier 3: 6.5 – 7.5 CGPA (Standard Eligibility)</option>
+<option>Tier 4: Below 6.5 CGPA (Remediation Needed)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2 pointer-events-none text-[18px] text-outline">grade</span>
+</div>
+</div>
+</div>
+<!-- Active filter chips & Trigger -->
+<div class="flex flex-wrap items-center justify-between pt-2 border-t border-surface-container">
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-label-sm text-label-sm text-outline">Active Constraints:</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+          Dept: All Engineering
+          <span class="material-symbols-outlined text-[13px] cursor-pointer hover:text-error">close</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+          Opted-In Only (420)
+          <span class="material-symbols-outlined text-[13px] cursor-pointer hover:text-error">close</span>
+</span>
+<button class="font-label-sm text-label-sm text-secondary hover:underline ml-1">Clear all filters</button>
+</div>
+<div class="flex items-center gap-2 mt-2 sm:mt-0">
+<button class="px-3.5 h-8 rounded-lg bg-surface-container-high text-on-surface font-headline-sm text-body-sm hover:bg-surface-container transition-all">
+          Reset
+        </button>
+<button class="px-4 h-8 rounded-lg bg-secondary text-on-secondary font-headline-sm text-body-sm hover:bg-primary transition-all flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[15px]">filter_list</span>
+<span>Apply Filter Set</span>
+</button>
+</div>
+</div>
+</div>
+<!-- SECTION 3: EXECUTIVE KPI CARDS -->
+<section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md mb-space-lg">
+<!-- Card 1: Placement Rate -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-secondary/5 rounded-full pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Cohort Conversion Rate</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-low text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+            +4.2% YoY
+          </span>
+</div>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-headline-xl text-headline-xl text-primary font-bold">82.1%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Target: 85.0%</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+<strong>368 Placed</strong> out of 448 active candidates (345 single, 23 multiple offers)
+        </p>
+</div>
+<!-- Linear Gauge -->
+<div class="w-full pt-space-xs">
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden flex">
+<div class="bg-secondary h-full rounded-full transition-all duration-700" style="width: 82.1%"></div>
+</div>
+<div class="flex justify-between items-center text-label-sm font-label-sm text-outline mt-1.5">
+<span>Prior: 77.9%</span>
+<span class="text-secondary font-medium">Delta: +18 Offers to Target</span>
+</div>
+</div>
+</div>
+<!-- Card 2: Compensation -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-tertiary-fixed-dim/10 rounded-full pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Compensation (CTC)</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-low text-secondary font-label-sm text-label-sm">
+            Median Base
+          </span>
+</div>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-headline-xl text-headline-xl text-primary font-bold">₹8.50</span>
+<span class="font-headline-sm text-headline-sm text-on-surface-variant">LPA</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant mb-space-xs">
+<span>Mean Package:</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">₹9.85 LPA</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant mb-space-xs">
+<span>Apex Package:</span>
+<span class="font-label-md text-label-md text-secondary font-semibold">₹42.0 LPA (Amazon)</span>
+</div>
+</div>
+<div class="pt-space-xs border-t border-surface-container flex items-center justify-between text-body-sm">
+<span class="font-body-sm text-body-sm text-outline">Tier-1 Conversion:</span>
+<span class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> 34.8% (128 Candidates)
+        </span>
+</div>
+</div>
+<!-- Card 3: Parity Index -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-secondary-fixed/30 rounded-full pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Inter-Branch Parity</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm">
+            Standard 0.92
+          </span>
+</div>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-headline-xl text-headline-xl text-primary font-bold">0.92</span>
+<span class="font-label-md text-label-md text-outline">/ 1.00 Max</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+          Consistent velocity across computing disciplines. ECE conversion lagging behind software cohorts by 16.1%.
+        </p>
+</div>
+<div class="pt-space-xs border-t border-surface-container flex flex-col gap-1">
+<div class="flex justify-between items-center text-label-sm font-label-sm">
+<span class="text-outline">Top: CSE (88.5%)</span>
+<span class="text-error font-medium">Gap: 16.1%</span>
+<span class="text-outline">Min: ECE (72.4%)</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden flex">
+<div class="bg-secondary h-full rounded-full" style="width: 92%"></div>
+</div>
+</div>
+</div>
+<!-- Card 4: Accreditation Readiness -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-surface-container-high rounded-full pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Accreditation Readiness</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-low text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px]">verified</span> Validated
+          </span>
+</div>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-headline-xl text-headline-xl text-primary font-bold">94.2%</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Compliant</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+          NBA Criterion 5.2.1 formula ready. 368 offer verification docs signed and matched with corporate HR stamps.
+        </p>
+</div>
+<div class="pt-space-xs border-t border-surface-container flex items-center justify-between text-body-sm">
+<span class="font-body-sm text-body-sm text-outline">Unverified Offers:</span>
+<span class="font-label-md text-label-md text-error font-semibold">14 Pending Stamping</span>
+</div>
+</div>
+</section>
+<!-- SECTION 4: DEPARTMENT-WISE PLACEMENT COMPARISON (MAJOR FEATURE) -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm mb-space-lg">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">domain</span>
+<h2 class="font-headline-md text-headline-md text-primary">Department-Wise Placement Benchmarking</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+          Strictly computed as <code class="px-1.5 py-0.5 bg-surface-container rounded font-label-sm text-label-sm text-primary">(Placed / Eligible Candidates with known outcomes)</code>. Excludes students pursuing overseas higher studies.
+        </p>
+</div>
+<!-- View Switcher Tabs -->
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg self-start">
+<button class="px-3.5 py-1.5 rounded-md font-headline-sm text-body-sm bg-surface-container-lowest text-primary shadow-sm flex items-center gap-1.5 transition-all" id="viewBtnGraph" onclick="toggleDeptView('graph')">
+<span class="material-symbols-outlined text-[16px]">bar_chart</span>
+<span>Graphical Velocity</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-md font-body-md text-body-sm text-on-surface-variant hover:text-on-surface flex items-center gap-1.5 transition-all" id="viewBtnTable" onclick="toggleDeptView('table')">
+<span class="material-symbols-outlined text-[16px]">format_list_bulleted</span>
+<span>Tabular Breakdown</span>
+</button>
+</div>
+</div>
+<!-- VIEW A: GRAPHICAL COMPARISON -->
+<div class="block" id="deptGraphView">
+<!-- 4-Department High-Density Bento Cards with Integrated Progress Visualizations -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md mb-space-md">
+<!-- CSE Card -->
+<div class="p-space-md rounded-xl bg-surface-container-low/70 flex flex-col justify-between">
+<div class="flex justify-between items-start mb-2">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Dept. of Computer Science</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mt-0.5">CSE (Core &amp; Spec.)</h3>
+</div>
+<span class="font-label-md text-label-md font-bold px-2 py-0.5 rounded bg-surface-container-high text-primary">88.5%</span>
+</div>
+<div class="my-3 flex flex-col gap-1.5">
+<div class="flex justify-between text-body-sm">
+<span class="text-on-surface-variant font-body-sm">Placed Candidates:</span>
+<span class="font-label-md text-label-md text-primary font-semibold">195 / 220</span>
+</div>
+<!-- Segmented bar -->
+<div class="w-full bg-surface-container h-3 rounded-full overflow-hidden flex gap-0.5">
+<div class="bg-primary h-full" style="width: 88.5%" title="Placed: 195"></div>
+<div class="bg-secondary-container h-full" style="width: 8.5%" title="In-Process: 19"></div>
+<div class="bg-surface-dim h-full" style="width: 3.0%" title="Unplaced: 6"></div>
+</div>
+<div class="flex justify-between text-label-sm font-label-sm text-outline">
+<span>Avg: <strong>₹11.2 LPA</strong></span>
+<span>Top: <strong>₹42.0 LPA</strong></span>
+</div>
+</div>
+<div class="pt-2 border-t border-surface-container flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-secondary font-medium">14 Dream Offers (&gt;15L)</span>
+<span class="text-on-surface-variant">Amazon, MSFT</span>
+</div>
+</div>
+<!-- AI & DS Card -->
+<div class="p-space-md rounded-xl bg-surface-container-low/70 flex flex-col justify-between">
+<div class="flex justify-between items-start mb-2">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Dept. of Artificial Intelligence</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mt-0.5">AI &amp; Data Science</h3>
+</div>
+<span class="font-label-md text-label-md font-bold px-2 py-0.5 rounded bg-surface-container-high text-primary">86.2%</span>
+</div>
+<div class="my-3 flex flex-col gap-1.5">
+<div class="flex justify-between text-body-sm">
+<span class="text-on-surface-variant font-body-sm">Placed Candidates:</span>
+<span class="font-label-md text-label-md text-primary font-semibold">56 / 65</span>
+</div>
+<div class="w-full bg-surface-container h-3 rounded-full overflow-hidden flex gap-0.5">
+<div class="bg-primary h-full" style="width: 86.2%" title="Placed: 56"></div>
+<div class="bg-secondary-container h-full" style="width: 9.2%" title="In-Process: 6"></div>
+<div class="bg-surface-dim h-full" style="width: 4.6%" title="Unplaced: 3"></div>
+</div>
+<div class="flex justify-between text-label-sm font-label-sm text-outline">
+<span>Avg: <strong>₹10.4 LPA</strong></span>
+<span>Top: <strong>₹32.0 LPA</strong></span>
+</div>
+</div>
+<div class="pt-2 border-t border-surface-container flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-secondary font-medium">6 Dream Offers (&gt;15L)</span>
+<span class="text-on-surface-variant">Oracle, Adobe</span>
+</div>
+</div>
+<!-- IT / ISE Card -->
+<div class="p-space-md rounded-xl bg-surface-container-low/70 flex flex-col justify-between">
+<div class="flex justify-between items-start mb-2">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Dept. of Information Science</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mt-0.5">IT &amp; ISE Branch</h3>
+</div>
+<span class="font-label-md text-label-md font-bold px-2 py-0.5 rounded bg-surface-container-high text-primary">84.0%</span>
+</div>
+<div class="my-3 flex flex-col gap-1.5">
+<div class="flex justify-between text-body-sm">
+<span class="text-on-surface-variant font-body-sm">Placed Candidates:</span>
+<span class="font-label-md text-label-md text-primary font-semibold">63 / 75</span>
+</div>
+<div class="w-full bg-surface-container h-3 rounded-full overflow-hidden flex gap-0.5">
+<div class="bg-primary h-full" style="width: 84.0%" title="Placed: 63"></div>
+<div class="bg-secondary-container h-full" style="width: 10.6%" title="In-Process: 8"></div>
+<div class="bg-surface-dim h-full" style="width: 5.4%" title="Unplaced: 4"></div>
+</div>
+<div class="flex justify-between text-label-sm font-label-sm text-outline">
+<span>Avg: <strong>₹9.8 LPA</strong></span>
+<span>Top: <strong>₹28.0 LPA</strong></span>
+</div>
+</div>
+<div class="pt-2 border-t border-surface-container flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-secondary font-medium">7 Dream Offers (&gt;15L)</span>
+<span class="text-on-surface-variant">Cisco, Goldman</span>
+</div>
+</div>
+<!-- ECE Card -->
+<div class="p-space-md rounded-xl bg-surface-container-low/70 flex flex-col justify-between">
+<div class="flex justify-between items-start mb-2">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Dept. of Electronics &amp; Comm.</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mt-0.5">ECE Branch</h3>
+</div>
+<span class="font-label-md text-label-md font-bold px-2 py-0.5 rounded bg-surface-container-high text-primary">72.4%</span>
+</div>
+<div class="my-3 flex flex-col gap-1.5">
+<div class="flex justify-between text-body-sm">
+<span class="text-on-surface-variant font-body-sm">Placed Candidates:</span>
+<span class="font-label-md text-label-md text-primary font-semibold">54 / 74</span>
+</div>
+<div class="w-full bg-surface-container h-3 rounded-full overflow-hidden flex gap-0.5">
+<div class="bg-primary h-full" style="width: 72.4%" title="Placed: 54"></div>
+<div class="bg-secondary-container h-full" style="width: 16.2%" title="In-Process: 12"></div>
+<div class="bg-surface-dim h-full" style="width: 11.4%" title="Unplaced: 8"></div>
+</div>
+<div class="flex justify-between text-label-sm font-label-sm text-outline">
+<span>Avg: <strong>₹7.9 LPA</strong></span>
+<span>Top: <strong>₹18.0 LPA</strong></span>
+</div>
+</div>
+<div class="pt-2 border-t border-surface-container flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-secondary font-medium">3 Dream Offers (&gt;15L)</span>
+<span class="text-on-surface-variant">Texas Instruments</span>
+</div>
+</div>
+</div>
+<!-- Master Comparative Chart (Inline SVG Visual) -->
+<div class="p-space-md bg-surface-container-low/40 rounded-xl">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-body-sm text-primary">Cohort Conversion Velocity by Department</span>
+<span class="font-body-sm text-label-sm text-outline">(Enrolled vs. Eligible vs. Placed)</span>
+</div>
+<!-- Legend -->
+<div class="flex items-center gap-4 text-label-sm font-label-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded bg-surface-dim"></span>
+<span class="text-on-surface-variant">Enrolled</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded bg-secondary"></span>
+<span class="text-on-surface-variant">Eligible &amp; Opted</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded bg-primary"></span>
+<span class="text-primary font-semibold">Confirmed Placed</span>
+</div>
+</div>
+</div>
+<!-- SVG Multi-Bar Chart -->
+<div class="w-full overflow-x-auto">
+<svg class="w-full min-w-[620px] h-48" fill="none" viewbox="0 0 800 180" xmlns="http://www.w3.org/2000/svg">
+<!-- Grid Lines -->
+<line stroke="#CBD5E1" stroke-dasharray="4 4" stroke-width="0.75" x1="50" x2="780" y1="20" y2="20"></line>
+<text class="font-label-sm fill-[#787680]" font-size="10" text-anchor="end" x="35" y="24">250</text>
+<line stroke="#CBD5E1" stroke-dasharray="4 4" stroke-width="0.75" x1="50" x2="780" y1="65" y2="65"></line>
+<text class="font-label-sm fill-[#787680]" font-size="10" text-anchor="end" x="35" y="69">175</text>
+<line stroke="#CBD5E1" stroke-dasharray="4 4" stroke-width="0.75" x1="50" x2="780" y1="110" y2="110"></line>
+<text class="font-label-sm fill-[#787680]" font-size="10" text-anchor="end" x="35" y="114">100</text>
+<line stroke="#787680" stroke-width="1" x1="50" x2="780" y1="150" y2="150"></line>
+<text class="font-label-sm fill-[#787680]" font-size="10" text-anchor="end" x="35" y="154">0</text>
+<!-- CSE Group (x=70 to 220) -->
+<!-- Enrolled (240) -> h=138 -->
+<rect fill="#cbdbf5" height="128" rx="3" width="28" x="90" y="22"></rect>
+<!-- Eligible (220) -> h=126 -->
+<rect fill="#4e45d5" height="116" rx="3" width="28" x="122" y="34"></rect>
+<!-- Placed (195) -> h=112 -->
+<rect fill="#070235" height="102" rx="3" width="28" x="154" y="48"></rect>
+<text class="font-headline-sm fill-[#070235]" font-size="12" font-weight="600" text-anchor="middle" x="136" y="170">CSE Core</text>
+<!-- AI&DS Group (x=250 to 400) -->
+<!-- Enrolled (70) -> h=40 -->
+<rect fill="#cbdbf5" height="32" rx="3" width="28" x="270" y="118"></rect>
+<!-- Eligible (65) -> h=37 -->
+<rect fill="#4e45d5" height="28" rx="3" width="28" x="302" y="122"></rect>
+<!-- Placed (56) -> h=32 -->
+<rect fill="#070235" height="24" rx="3" width="28" x="334" y="126"></rect>
+<text class="font-headline-sm fill-[#070235]" font-size="12" font-weight="600" text-anchor="middle" x="316" y="170">AI &amp; Data Sci</text>
+<!-- IT / ISE Group (x=430 to 580) -->
+<!-- Enrolled (82) -> h=47 -->
+<rect fill="#cbdbf5" height="40" rx="3" width="28" x="450" y="110"></rect>
+<!-- Eligible (75) -> h=43 -->
+<rect fill="#4e45d5" height="35" rx="3" width="28" x="482" y="115"></rect>
+<!-- Placed (63) -> h=36 -->
+<rect fill="#070235" height="28" rx="3" width="28" x="514" y="122"></rect>
+<text class="font-headline-sm fill-[#070235]" font-size="12" font-weight="600" text-anchor="middle" x="496" y="170">IT &amp; ISE</text>
+<!-- ECE Group (x=610 to 760) -->
+<!-- Enrolled (88) -> h=50 -->
+<rect fill="#cbdbf5" height="44" rx="3" width="28" x="630" y="106"></rect>
+<!-- Eligible (74) -> h=42 -->
+<rect fill="#4e45d5" height="34" rx="3" width="28" x="662" y="116"></rect>
+<!-- Placed (54) -> h=31 -->
+<rect fill="#070235" height="22" rx="3" width="28" x="694" y="128"></rect>
+<text class="font-headline-sm fill-[#070235]" font-size="12" font-weight="600" text-anchor="middle" x="676" y="170">ECE Branch</text>
+</svg>
+</div>
+</div>
+</div>
+<!-- VIEW B: DETAILED TABULAR BREAKDOWN -->
+<div class="hidden overflow-x-auto" id="deptTableView">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase">
+<th class="py-3 px-4 font-semibold">Department / Program</th>
+<th class="py-3 px-3 text-right font-semibold">Enrolled</th>
+<th class="py-3 px-3 text-right font-semibold">Eligible</th>
+<th class="py-3 px-3 text-right font-semibold">Placed</th>
+<th class="py-3 px-3 text-right font-semibold">In Pipeline</th>
+<th class="py-3 px-4 text-right font-semibold">Placement Rate</th>
+<th class="py-3 px-4 text-right font-semibold">Avg. Package</th>
+<th class="py-3 px-4 text-right font-semibold">Top Package</th>
+<th class="py-3 px-4 font-semibold">Key Recruiters</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container font-body-sm text-body-sm">
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-headline-sm text-body-sm text-primary">Computer Science &amp; Engineering (CSE)</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right font-label-md">240</td>
+<td class="py-3 px-3 text-right font-label-md">220</td>
+<td class="py-3 px-3 text-right font-label-md font-bold text-primary">195</td>
+<td class="py-3 px-3 text-right font-label-md text-secondary">19</td>
+<td class="py-3 px-4 text-right">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container font-label-md text-label-md font-semibold text-primary">88.5%</span>
+</td>
+<td class="py-3 px-4 text-right font-label-md text-on-surface">₹11.20 LPA</td>
+<td class="py-3 px-4 text-right font-label-md font-bold text-secondary">₹42.00 LPA</td>
+<td class="py-3 px-4 font-body-sm text-outline truncate max-w-[180px]">Amazon, Microsoft, Cisco, Adobe</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container"></span>
+<span class="font-headline-sm text-body-sm text-primary">Artificial Intelligence &amp; Data Science (AI&amp;DS)</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right font-label-md">70</td>
+<td class="py-3 px-3 text-right font-label-md">65</td>
+<td class="py-3 px-3 text-right font-label-md font-bold text-primary">56</td>
+<td class="py-3 px-3 text-right font-label-md text-secondary">6</td>
+<td class="py-3 px-4 text-right">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container font-label-md text-label-md font-semibold text-primary">86.2%</span>
+</td>
+<td class="py-3 px-4 text-right font-label-md text-on-surface">₹10.40 LPA</td>
+<td class="py-3 px-4 text-right font-label-md font-bold text-secondary">₹32.00 LPA</td>
+<td class="py-3 px-4 font-body-sm text-outline truncate max-w-[180px]">Oracle, Thoughtworks, Fractal</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed-dim"></span>
+<span class="font-headline-sm text-body-sm text-primary">Information Science &amp; Technology (IT/ISE)</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right font-label-md">82</td>
+<td class="py-3 px-3 text-right font-label-md">75</td>
+<td class="py-3 px-3 text-right font-label-md font-bold text-primary">63</td>
+<td class="py-3 px-3 text-right font-label-md text-secondary">8</td>
+<td class="py-3 px-4 text-right">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container font-label-md text-label-md font-semibold text-primary">84.0%</span>
+</td>
+<td class="py-3 px-4 text-right font-label-md text-on-surface">₹9.80 LPA</td>
+<td class="py-3 px-4 text-right font-label-md font-bold text-secondary">₹28.00 LPA</td>
+<td class="py-3 px-4 font-body-sm text-outline truncate max-w-[180px]">Goldman Sachs, SAP Labs, Dell</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-outline"></span>
+<span class="font-headline-sm text-body-sm text-primary">Electronics &amp; Communication Engg (ECE)</span>
+</div>
+</td>
+<td class="py-3 px-3 text-right font-label-md">88</td>
+<td class="py-3 px-3 text-right font-label-md">74</td>
+<td class="py-3 px-3 text-right font-label-md font-bold text-primary">54</td>
+<td class="py-3 px-3 text-right font-label-md text-secondary">12</td>
+<td class="py-3 px-4 text-right">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container font-label-md text-label-md font-semibold text-primary">72.4%</span>
+</td>
+<td class="py-3 px-4 text-right font-label-md text-on-surface">₹7.90 LPA</td>
+<td class="py-3 px-4 text-right font-label-md font-bold text-secondary">₹18.00 LPA</td>
+<td class="py-3 px-4 font-body-sm text-outline truncate max-w-[180px]">Qualcomm, Texas Inst, Bosch</td>
+</tr>
+<!-- Summary Aggregate Row -->
+<tr class="bg-surface-container-low font-semibold text-primary">
+<td class="py-3 px-4">Institution Aggregate Total</td>
+<td class="py-3 px-3 text-right font-label-md">480</td>
+<td class="py-3 px-3 text-right font-label-md">434</td>
+<td class="py-3 px-3 text-right font-label-md font-bold">368</td>
+<td class="py-3 px-3 text-right font-label-md">45</td>
+<td class="py-3 px-4 text-right">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-primary text-on-primary font-label-md text-label-md">82.1%</span>
+</td>
+<td class="py-3 px-4 text-right font-label-md">₹9.85 LPA</td>
+<td class="py-3 px-4 text-right font-label-md">₹42.00 LPA</td>
+<td class="py-3 px-4 font-body-sm text-on-surface-variant">92 Unique Companies Visited</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- SECTION 5 & 6: 2-COLUMN GRID (CGPA CORRELATION & COMPENSATION TIERS) -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg mb-space-lg">
+<!-- SECTION 5: CGPA vs. Placement Conversion -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">school</span>
+<h3 class="font-headline-md text-headline-md text-primary">CGPA vs. Placement Conversion</h3>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Correlation Coeff: r = 0.84</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+          Empirical success rates across cumulative academic score bands for the current active cohort.
+        </p>
+<!-- Tier 1 -->
+<div class="mb-space-md p-space-sm rounded-lg bg-surface-container-low/50 hover:bg-surface-container-low transition-colors">
+<div class="flex justify-between items-center mb-1">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-primary text-on-primary font-label-sm text-label-sm font-semibold">Tier 1 (&gt; 9.0 CGPA)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">82 Students</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-primary">80 Placed (97.6%)</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Avg: ₹14.8 LPA</span>
+</div>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden mb-1.5">
+<div class="bg-primary h-full rounded-full" style="width: 97.6%"></div>
+</div>
+<div class="flex justify-between items-center text-label-sm font-label-sm text-outline">
+<span>Primary Roles: SDE-1, AI/ML Researcher, Quantitative Analyst</span>
+<span class="text-on-surface-variant font-medium">2 Opted for Higher Studies</span>
+</div>
+</div>
+<!-- Tier 2 -->
+<div class="mb-space-md p-space-sm rounded-lg bg-surface-container-low/50 hover:bg-surface-container-low transition-colors">
+<div class="flex justify-between items-center mb-1">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-secondary text-on-secondary font-label-sm text-label-sm font-semibold">Tier 2 (8.0 – 8.9 CGPA)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">210 Students</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-primary">188 Placed (89.5%)</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Avg: ₹9.6 LPA</span>
+</div>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden mb-1.5">
+<div class="bg-secondary h-full rounded-full" style="width: 89.5%"></div>
+</div>
+<div class="flex justify-between items-center text-label-sm font-label-sm text-outline">
+<span>Primary Roles: Full Stack Engineer, Cloud Architect, DevOps Specialist</span>
+<span class="text-on-surface-variant font-medium">14 Active in Final Interview</span>
+</div>
+</div>
+<!-- Tier 3 -->
+<div class="mb-space-md p-space-sm rounded-lg bg-surface-container-low/50 hover:bg-surface-container-low transition-colors">
+<div class="flex justify-between items-center mb-1">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">Tier 3 (7.0 – 7.9 CGPA)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">144 Students</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-primary">102 Placed (70.8%)</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Avg: ₹6.8 LPA</span>
+</div>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden mb-1.5">
+<div class="bg-secondary-container h-full rounded-full" style="width: 70.8%"></div>
+</div>
+<div class="flex justify-between items-center text-label-sm font-label-sm text-outline">
+<span>Primary Roles: Systems Engineer, QA Automation, Tech Consultant</span>
+<span class="text-on-surface-variant font-medium">28 In Corporate Assessment</span>
+</div>
+</div>
+<!-- Tier 4 -->
+<div class="p-space-sm rounded-lg bg-surface-container-low/50 hover:bg-surface-container-low transition-colors">
+<div class="flex justify-between items-center mb-1">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">Tier 4 (&lt; 7.0 CGPA)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">44 Students</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-error">18 Placed (40.9%)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Avg: ₹5.2 LPA</span>
+</div>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden mb-1.5">
+<div class="bg-error h-full rounded-full" style="width: 40.9%"></div>
+</div>
+<div class="flex justify-between items-center text-label-sm font-label-sm text-outline">
+<span class="text-error font-medium">26 Enrolled in Mandatory Remediation Bootcamp</span>
+<span class="text-on-surface-variant">Next Drive: March 15</span>
+</div>
+</div>
+</div>
+<!-- Footer Info -->
+<div class="mt-space-md pt-space-xs border-t border-surface-container flex items-center justify-between text-body-sm">
+<span class="text-on-surface-variant">Key takeaway for academic mentoring:</span>
+<span class="font-label-md text-label-md text-primary font-semibold">Crossing 8.0 CGPA yields +18.7% conversion lift</span>
+</div>
+</div>
+<!-- SECTION 6: SALARY COMPENSATION TIER BREAKDOWN -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">payments</span>
+<h3 class="font-headline-md text-headline-md text-primary">Compensation Package Spread (CTC)</h3>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Total Offers: 368</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+          Stratification of all confirmed campus offers categorized by institutional CTC brackets.
+        </p>
+<!-- Stacked Horizontal Proportion Bar -->
+<div class="mb-space-md">
+<div class="flex justify-between text-label-sm font-label-sm text-outline mb-1">
+<span>Package Distribution Ratio</span>
+<span class="text-primary font-medium">100% Total Volume</span>
+</div>
+<div class="w-full h-4 rounded-lg overflow-hidden flex bg-surface-container gap-0.5">
+<div class="bg-primary h-full hover:opacity-90 transition-opacity" style="width: 10.3%" title="Super Dream: 10.3%"></div>
+<div class="bg-secondary h-full hover:opacity-90 transition-opacity" style="width: 26.6%" title="Dream: 26.6%"></div>
+<div class="bg-secondary-container h-full hover:opacity-90 transition-opacity" style="width: 42.4%" title="High Potential: 42.4%"></div>
+<div class="bg-surface-dim h-full hover:opacity-90 transition-opacity" style="width: 20.7%" title="Core/Mass: 20.7%"></div>
+</div>
+<div class="flex justify-between text-label-sm font-label-sm text-outline mt-1.5">
+<span>Apex: ₹42.0 LPA</span>
+<span>Threshold Minimum: ₹3.6 LPA</span>
+</div>
+</div>
+<!-- 4 Tiers Breakdown Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<!-- Super Dream -->
+<div class="p-space-sm rounded-lg bg-surface-container-low border-l-4 border-primary flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-center mb-1">
+<span class="font-headline-sm text-body-sm text-primary">Super Dream Tier</span>
+<span class="font-label-sm text-label-sm font-bold text-primary">10.3%</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-primary">&gt; ₹20.0 LPA</span>
+<p class="font-body-sm text-label-sm text-outline mt-1">38 Offers Confirmed</p>
+</div>
+<div class="pt-2 mt-2 border-t border-surface-container text-label-sm font-label-sm text-on-surface-variant truncate">
+              Amazon, Microsoft IDC, Google, Atlassian
+            </div>
+</div>
+<!-- Dream Tier -->
+<div class="p-space-sm rounded-lg bg-surface-container-low border-l-4 border-secondary flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-center mb-1">
+<span class="font-headline-sm text-body-sm text-primary">Dream Tier</span>
+<span class="font-label-sm text-label-sm font-bold text-secondary">26.6%</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-secondary">₹10.0 – ₹20.0 LPA</span>
+<p class="font-body-sm text-label-sm text-outline mt-1">98 Offers Confirmed</p>
+</div>
+<div class="pt-2 mt-2 border-t border-surface-container text-label-sm font-label-sm text-on-surface-variant truncate">
+              Cisco, Goldman Sachs, Oracle, Adobe
+            </div>
+</div>
+<!-- High Potential Tier -->
+<div class="p-space-sm rounded-lg bg-surface-container-low border-l-4 border-secondary-container flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-center mb-1">
+<span class="font-headline-sm text-body-sm text-primary">High Potential Tier</span>
+<span class="font-label-sm text-label-sm font-bold text-primary">42.4%</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-primary">₹6.5 – ₹10.0 LPA</span>
+<p class="font-body-sm text-label-sm text-outline mt-1">156 Offers Confirmed</p>
+</div>
+<div class="pt-2 mt-2 border-t border-surface-container text-label-sm font-label-sm text-on-surface-variant truncate">
+              TCS Digital, Accenture Tech, LTI Mindtree
+            </div>
+</div>
+<!-- Core / Mass Tier -->
+<div class="p-space-sm rounded-lg bg-surface-container-low border-l-4 border-outline flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-center mb-1">
+<span class="font-headline-sm text-body-sm text-primary">Core &amp; IT Services</span>
+<span class="font-label-sm text-label-sm font-bold text-outline">20.7%</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-primary">₹3.5 – ₹6.5 LPA</span>
+<p class="font-body-sm text-label-sm text-outline mt-1">76 Offers Confirmed</p>
+</div>
+<div class="pt-2 mt-2 border-t border-surface-container text-label-sm font-label-sm text-on-surface-variant truncate">
+              Infosys, Cognizant, Wipro Turbo
+            </div>
+</div>
+</div>
+</div>
+<!-- Quick Summary Stat -->
+<div class="mt-space-md pt-space-xs border-t border-surface-container flex items-center justify-between text-body-sm">
+<span class="text-on-surface-variant">Tier-1 &amp; Super-Dream cumulative:</span>
+<span class="font-label-md text-label-md text-secondary font-semibold">136 Students (36.9% of Cohort)</span>
+</div>
+</div>
+</section>
+<!-- SECTION 7: REPORT PRESETS & RECENT AUDIT EXPORTS -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm mb-space-lg">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">assignment</span>
+<h2 class="font-headline-md text-headline-md text-primary">Institutional Export Center &amp; Audit Logs</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+          One-click standard statutory reporting templates compliant with AICTE, NBA, NAAC, and NIRF audits.
+        </p>
+</div>
+<button class="flex items-center gap-1.5 px-3.5 h-9 rounded-lg bg-surface-container-high text-primary hover:bg-surface-container text-body-sm font-headline-sm transition-all self-start sm:self-auto" onclick="alert('Initiating Custom Report Builder modal...');">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+<span>Build Custom Schedule</span>
+</button>
+</div>
+<!-- 3 Statutory Preset Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md mb-space-lg">
+<!-- Preset 1 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between group hover:shadow-sm transition-all">
+<div>
+<div class="flex justify-between items-start mb-space-xs">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[12px]">verified</span> Preset 1
+            </span>
+<span class="font-label-sm text-label-sm text-outline">Format: PDF / XLS</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-1">NBA Criterion 5.2.1 Summary</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+            Official academic format mapping student-to-placed ratio, company registration numbers, and letter verification stamps.
+          </p>
+</div>
+<div class="pt-2 border-t border-surface-container flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline">Cycle 2024–2027</span>
+<button class="font-headline-sm text-body-sm text-secondary hover:underline flex items-center gap-1" onclick="alert('Downloading NBA Criterion 5.2.1 Dossier...');">
+<span>Download</span>
+<span class="material-symbols-outlined text-[15px]">download</span>
+</button>
+</div>
+</div>
+<!-- Preset 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between group hover:shadow-sm transition-all">
+<div>
+<div class="flex justify-between items-start mb-space-xs">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[12px]">dataset</span> Preset 2
+            </span>
+<span class="font-label-sm text-label-sm text-outline">Format: CSV</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-1">Department Comparative Ledger</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+            Granular row-level table with student USN, full name, branch, CGPA, hiring corporate entity, and offer letter CTC value.
+          </p>
+</div>
+<div class="pt-2 border-t border-surface-container flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline">480 Raw Records</span>
+<button class="font-headline-sm text-body-sm text-secondary hover:underline flex items-center gap-1" onclick="alert('Exporting Department Ledger CSV...');">
+<span>Export CSV</span>
+<span class="material-symbols-outlined text-[15px]">file_open</span>
+</button>
+</div>
+</div>
+<!-- Preset 3 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between group hover:shadow-sm transition-all">
+<div>
+<div class="flex justify-between items-start mb-space-xs">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-container text-on-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[12px]">account_balance</span> Preset 3
+            </span>
+<span class="font-label-sm text-label-sm text-outline">Format: XLSX Multi-tab</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-1">Company-Wise Hiring Audit</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+            Complete recruiter ledger logging drive dates, shortlists vs final selections, stipend allowances, and retention commitments.
+          </p>
+</div>
+<div class="pt-2 border-t border-surface-container flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline">92 Recruiter Ledgers</span>
+<button class="font-headline-sm text-body-sm text-secondary hover:underline flex items-center gap-1" onclick="alert('Compiling Company Audit Spreadsheet (.XLSX)...');">
+<span>Export XLSX</span>
+<span class="material-symbols-outlined text-[15px]">download</span>
+</button>
+</div>
+</div>
+</div>
+<!-- RECENT AUDIT EXPORTS TABLE -->
+<div class="flex flex-col">
+<div class="flex items-center justify-between mb-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-primary">Recent Generated Reports &amp; Accreditation Logs</h3>
+<span class="font-label-sm text-label-sm text-outline">Showing last 4 institutional exports</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase">
+<th class="py-2.5 px-4 font-semibold">Report Title</th>
+<th class="py-2.5 px-3 font-semibold">Batch Scope</th>
+<th class="py-2.5 px-3 font-semibold">Generated By</th>
+<th class="py-2.5 px-3 font-semibold">Type</th>
+<th class="py-2.5 px-3 text-right font-semibold">File Size</th>
+<th class="py-2.5 px-3 font-semibold">Generated Timestamp</th>
+<th class="py-2.5 px-4 text-right font-semibold">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container font-body-sm text-body-sm">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-error">picture_as_pdf</span>
+<span class="font-headline-sm text-body-sm text-primary">NBA_Criterion_5_Compliance_Dossier_Final.pdf</span>
+</div>
+</td>
+<td class="py-3 px-3 font-label-sm text-label-sm">Batch 2024–2025</td>
+<td class="py-3 px-3 font-body-sm text-on-surface-variant">Dr. Sarah Jenkins</td>
+<td class="py-3 px-3">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">PDF</span>
+</td>
+<td class="py-3 px-3 text-right font-label-md text-label-md">14.8 MB</td>
+<td class="py-3 px-3 font-label-sm text-label-sm text-outline">Today, 09:24 AM</td>
+<td class="py-3 px-4 text-right">
+<button class="p-1 rounded hover:bg-surface-container text-secondary" onclick="alert('Downloading NBA Dossier PDF...');" title="Download">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-tertiary-container">table_chart</span>
+<span class="font-headline-sm text-body-sm text-primary">Consolidated_Company_Hiring_Ledger_Q3.xlsx</span>
+</div>
+</td>
+<td class="py-3 px-3 font-label-sm text-label-sm">CSE &amp; AI/DS (2024–25)</td>
+<td class="py-3 px-3 font-body-sm text-on-surface-variant">Prof. A. Nambiar (CSE TPO)</td>
+<td class="py-3 px-3">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">XLSX</span>
+</td>
+<td class="py-3 px-3 text-right font-label-md text-label-md">2.4 MB</td>
+<td class="py-3 px-3 font-label-sm text-label-sm text-outline">Yesterday, 04:45 PM</td>
+<td class="py-3 px-4 text-right">
+<button class="p-1 rounded hover:bg-surface-container text-secondary" onclick="alert('Downloading Company Ledger XLSX...');" title="Download">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">feed</span>
+<span class="font-headline-sm text-body-sm text-primary">Student_USN_OfferLetter_CTC_Master.csv</span>
+</div>
+</td>
+<td class="py-3 px-3 font-label-sm text-label-sm">All Departments</td>
+<td class="py-3 px-3 font-body-sm text-on-surface-variant">Automated Cron Job (Flask API)</td>
+<td class="py-3 px-3">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">CSV</span>
+</td>
+<td class="py-3 px-3 text-right font-label-md text-label-md">680 KB</td>
+<td class="py-3 px-3 font-label-sm text-label-sm text-outline">Feb 28, 2025, 11:30 PM</td>
+<td class="py-3 px-4 text-right">
+<button class="p-1 rounded hover:bg-surface-container text-secondary" onclick="alert('Downloading Student USN Master CSV...');" title="Download">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-error">picture_as_pdf</span>
+<span class="font-headline-sm text-body-sm text-primary">Executive_Governing_Council_Briefing.pdf</span>
+</div>
+</td>
+<td class="py-3 px-3 font-label-sm text-label-sm">Batch 2024–2025</td>
+<td class="py-3 px-3 font-body-sm text-on-surface-variant">Dr. Sarah Jenkins</td>
+<td class="py-3 px-3">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">PDF</span>
+</td>
+<td class="py-3 px-3 text-right font-label-md text-label-md">8.1 MB</td>
+<td class="py-3 px-3 font-label-sm text-label-sm text-outline">Feb 24, 2025, 02:15 PM</td>
+<td class="py-3 px-4 text-right">
+<button class="p-1 rounded hover:bg-surface-container text-secondary" onclick="alert('Downloading Council Briefing PDF...');" title="Download">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Interactive JavaScript for Tab Switching -->
+<script>
+    function toggleDeptView(view) {
+      const graphView = document.getElementById('deptGraphView');
+      const tableView = document.getElementById('deptTableView');
+      const btnGraph = document.getElementById('viewBtnGraph');
+      const btnTable = document.getElementById('viewBtnTable');
+
+      if (view === 'graph') {
+        graphView.classList.remove('hidden');
+        graphView.classList.add('block');
+        tableView.classList.add('hidden');
+        tableView.classList.remove('block');
+
+        btnGraph.className = 'px-3.5 py-1.5 rounded-md font-headline-sm text-body-sm bg-surface-container-lowest text-primary shadow-sm flex items-center gap-1.5 transition-all';
+        btnTable.className = 'px-3.5 py-1.5 rounded-md font-body-md text-body-sm text-on-surface-variant hover:text-on-surface flex items-center gap-1.5 transition-all';
+      } else {
+        tableView.classList.remove('hidden');
+        tableView.classList.add('block');
+        graphView.classList.add('hidden');
+        graphView.classList.remove('block');
+
+        btnTable.className = 'px-3.5 py-1.5 rounded-md font-headline-sm text-body-sm bg-surface-container-lowest text-primary shadow-sm flex items-center gap-1.5 transition-all';
+        btnGraph.className = 'px-3.5 py-1.5 rounded-md font-body-md text-body-sm text-on-surface-variant hover:text-on-surface flex items-center gap-1.5 transition-all';
+      }
+    }
+  </script>
+</div></main></div></body></html>

@@ -1,32 +1,37 @@
 /**
- * Placement AI — API Service Layer (Phase 0 stub)
- * All components must use this module — never call axios directly.
- * Full implementation in Phase 5.
+ * api.js — Axios client for PlacementAI Flask backend.
+ *
+ * All components MUST use this module for data fetching.
+ * supabase-js is used ONLY for auth (sign-in / sign-out / session).
+ * The access token is attached here automatically.
  */
-import axios from 'axios'
+import axios from "axios";
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || '/api/v1',
-  headers: { 'Content-Type': 'application/json' },
-})
+  baseURL: import.meta.env.VITE_API_BASE_URL || "/api",
+  headers: { "Content-Type": "application/json" },
+  withCredentials: false,
+});
 
-// Request interceptor: attach JWT token
+// Attach Supabase JWT on every outgoing request.
 api.interceptors.request.use((config) => {
-  const token = localStorage.getItem('access_token')
-  if (token) config.headers.Authorization = `Bearer ${token}`
-  return config
-})
-
-// Response interceptor: handle 401 globally
-api.interceptors.response.use(
-  (res) => res,
-  (err) => {
-    if (err.response?.status === 401) {
-      localStorage.removeItem('access_token')
-      window.location.href = '/auth/login'
-    }
-    return Promise.reject(err)
+  const token = localStorage.getItem("sb-access-token");
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
   }
-)
+  return config;
+});
 
-export default api
+// Global 401 handler: clear session and redirect to login.
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response?.status === 401) {
+      localStorage.removeItem("sb-access-token");
+      window.location.href = "/login";
+    }
+    return Promise.reject(error);
+  }
+);
+
+export default api;

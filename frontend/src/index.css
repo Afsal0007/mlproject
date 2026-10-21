@@ -1,0 +1,44 @@
+/*
+ * PlacementAI — Global Base Styles
+ * Base layer ported directly from Stitch <style> block in placement_dashboard/code.html.
+ * Do not add component or utility classes here — use Tailwind classes in JSX.
+ */
+
+/* Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------------ */
+/* Base layer (exact Stitch port)                                        */
+/* ------------------------------------------------------------------ */
+@layer base {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    /* Prevent bounce/overscroll on mobile — matches Stitch */
+    overscroll-behavior: none;
+  }
+
+  /* Stitch pattern: first/last child margin reset inside <main> */
+  main > :first-child {
+    margin-top: 0 !important;
+  }
+  main > :last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+/* Hide scrollbars globally (Stitch base) */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Numeric columns — tabular figures as per AGENTS.md */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
